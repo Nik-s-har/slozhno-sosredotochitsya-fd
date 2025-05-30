@@ -1,5 +1,342 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: 'IBM Plex mono', sans-serif;
+  font-size: 18px;
+  background-color: var(--bg-color);
+  background-image: url('../images/cover-image-dark.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: min(2.66vw, 20px);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  inline-size: 100%;
+  block-size: 100%;
+  justify-items: end;
+  align-items: center;
+}
+
+.decorated-zone::before {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--section-title-color);
+  border-block-start: 1px solid var(--section-title-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.decorated-zone::after {
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--section-title-color);
+  border-block-end: 1px solid var(--section-title-color);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.rec {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 10px;
+  inline-size: 50px;
+  block-size: 26px;
+}
+
+.rec::before {
+  display: inline-block;
+  inline-size: 33px;
+  block-size: 26px;
+  content: "REC";
+  position: absolute;
+  color: var(--section-title-color);
+} 
+
+.rec::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -2px;
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  background-color: var(--section-title-color);
+  box-shadow: 0 0 4px 2px var(--section-title-color);
+}
+
+.header__theme-menu {
+  block-size: 98px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  block-size: inherit;
+}
+
+.header__theme-menu-button {
+  inline-size: 70px;
+  block-size: 26px;
+  color: var(--section-title-color);
+  border: none;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--section-title-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--section-title-color);
+}
+
+.main-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  color: var(--title-color);
+  line-height: 82.5%;
+}
+
+.header__title {
+  justify-self: start;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__description {
+  display: inline-block;
+  inline-size: max(355px, 50%);
+}
+
+.title-decor {
+  color: var(--subtitle-color);
+  background-color: var(--subtitle-bg-color);
+  font-size: var(--font-size);
+  font-weight: bold;
+  line-height: var(--text-line-height);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, min-content);
+  gap: min(13.3vw, 80px);
+  padding-inline: min(2.66vw, 20px);
+  margin-block: min(10.9vw, 60px);
+}
+
+.content__block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
+  row-gap: 20px;
+}
+
+.content__block-title {
+  color: var(--section-title-color);
+  font-size: var(--font-size); 
+  font-weight: bold;
+  line-height: var(--text-line-height);
+}
+
+.content__block-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article .title-decor {
+  margin-block-end: 10px;
+}
+
+.article-solution .title-decor {
+  margin-block-end: 20px;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-text {
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: var(--text-line-height);
+  color: var(--text-color);
+}
+
+.link-decor {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link-decor:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.link-decor:focus {
+  text-decoration: none;
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+.subtitle {
+  font-size: var(--font-size);
+  font-weight: normal;
+  color: var(--subtitle-color);
+  background-color: var(--subtitle-bg-color);
+  margin-block-end: 10px;
+}
+
+.content__illustration {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
+  row-gap: var(--image-gap);
+}
+
+.image-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, min-content);
+  gap: var(--image-gap);
+  list-style: none;
+}
+
+.image-item {
+  line-height: 0;
+  font-size: 0;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.illustration {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .main-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+  }
+
+  .content__block {
+    grid-template-columns: 1fr 2fr;
+    justify-items: start;
+    align-items: start;
+    column-gap: 20px;
+  }
+
+  .one-row-grid {
+    grid-template-rows: 1fr;
+    grid-template-areas: "title content";
+  }
+
+  .two-row-grid {
+    grid-template-rows: min-content min-content;
+    grid-template-areas: "title ."
+                         "content content";
+  }
+
+  .content__block-title {
+    grid-area: title;
+  }
+
+  .content__block-articles {
+    grid-area: content;
+  }
+
+  .image-list {
+    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: "sunset sunset ice-cream"
+                         "tape books ice-cream"
+                         "tape street street";
+  }
+
+  .sunset {
+    grid-area: sunset;
+  }
+
+  .ice-cream {
+    grid-area: ice-cream;
+  }
+
+  .books {
+    grid-area: books;
+  }
+
+  .tape {
+    grid-area: tape;
+  }
+
+  .street {
+    grid-area: street;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    inline-size: 230px;
+    block-size: 26px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .one-row-grid {
+    column-gap: 10px;
+  }
+
+  .two-row-grid .content__block-articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    align-items: start;
+  }
 }

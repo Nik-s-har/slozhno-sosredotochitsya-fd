@@ -2,3 +2,16 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --font-size: 18px;
+  --image-gap: min(2.66vw, 20px);
+  --text-line-height: 130%;
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --title-color: #FF0070;
+  --section-title-color: #FF0070;
+  --subtitle-color: #000028;
+  --subtitle-bg-color: #ff0070;
+  --text-color: #F1B2CE;
+}
+
