@@ -5,8 +5,7 @@
 */
 
 :root.theme-light {
-  --bg-color: #ffc2e6;
-  --bg-image-path: ;
+  --bg-color: #fff1f7;
   --title-color: #ffc2e6;
   --section-title-color: #353430;
   --subtitle-color: #353430;
@@ -26,8 +25,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #ffc2e6;
-    --bg-image-path: ;
+    --bg-color: #fff1f7;
     --title-color: #ffc2e6;
     --section-title-color: #353430;
     --subtitle-color: #353430;
