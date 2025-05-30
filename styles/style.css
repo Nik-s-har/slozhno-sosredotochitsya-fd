@@ -272,7 +272,7 @@
   }
 
   .problem_identification,
-  .solution  {
+  .solution {
     grid-template-rows: 1fr;
     grid-template-areas: "title content";
   }
