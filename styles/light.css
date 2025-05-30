@@ -5,18 +5,18 @@
 */
 
 :root.theme-light {
-  --bg-color: #FFC2E6;
+  --bg-color: #ffc2e6;
   --bg-image-path: ;
-  --title-color: #FFC2E6;
+  --title-color: #ffc2e6;
   --section-title-color: #353430;
   --subtitle-color: #353430;
-  --subtitle-bg-color: #FF8DCB;
-  --accent-color: #FF8DCB;
+  --subtitle-bg-color: #ff8dcb;
+  --accent-color: #ff8dcb;
   --text-color: #353430;
 }
 
 .theme-light .page {
-  background-image: url('../images/cover-image-light.png');
+  background-image: url("../images/cover-image-light.png");
 }
 
 .theme-light .rec {
@@ -25,18 +25,18 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #FFC2E6;
+    --bg-color: #ffc2e6;
     --bg-image-path: ;
-    --title-color: #FFC2E6;
+    --title-color: #ffc2e6;
     --section-title-color: #353430;
     --subtitle-color: #353430;
-    --subtitle-bg-color: #FF8DCB;
-    --accent-color: #FF8DCB;
+    --subtitle-bg-color: #ff8dcb;
+    --accent-color: #ff8dcb;
     --text-color: #353430;
   }
 
   .page {
-    background-image: url('../images/cover-image-light.png');
+    background-image: url("../images/cover-image-light.png");
   }
 
   .rec {
