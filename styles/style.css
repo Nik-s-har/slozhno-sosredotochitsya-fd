@@ -1,11 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: "IBM Plex mono", monospace, sans-serif;
   font-size: 18px;
   background-color: var(--bg-color);
   background-image: url("../images/cover-image-dark.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -82,15 +83,10 @@
   block-size: 9px;
 }
 
-.header__theme-menu {
-  block-size: 98px;
-}
-
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  block-size: inherit;
+  gap: 11px;
 }
 
 .header__theme-menu-button {
@@ -103,6 +99,12 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--section-title-color);
+  pointer-events: none
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-border-color);
+  outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -164,8 +166,10 @@
   gap: 20px;
 }
 
-.article .title-decor {
-  margin-block-end: 10px;
+.article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .article-solution .title-decor {
@@ -201,7 +205,6 @@
 }
 
 .subtitle {
-  margin-block-end: 10px;
   color: var(--subtitle-color);
   font-weight: normal;
   font-size: var(--font-size);
@@ -268,12 +271,13 @@
     column-gap: 20px;
   }
 
-  .one-row-grid {
+  .problem_identification,
+  .solution  {
     grid-template-rows: 1fr;
     grid-template-areas: "title content";
   }
 
-  .two-row-grid {
+  .reasons_of_problem {
     grid-template-rows: min-content min-content;
     grid-template-areas:
       "title ."
@@ -323,19 +327,18 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    inline-size: 230px;
-    block-size: 26px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
 
-  .one-row-grid {
+  .problem_identification,
+  .solution {
     column-gap: 10px;
   }
 
-  .two-row-grid .content__block-articles {
+  .reasons_of_problem .content__block-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
